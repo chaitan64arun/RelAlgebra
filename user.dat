@@ -1,0 +1,9 @@
+account_number:int|customer_name:string|customer_id:int
+1001|Andrew|1376
+2919|Annavaram|2698
+3623|Gautham|3787
+4853|Srk|4112
+5587|Arun|5798
+6769|Karthik|6979
+7567|Gowtham|7993
+8793|Mandark|8986

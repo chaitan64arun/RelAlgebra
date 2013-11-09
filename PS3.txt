@@ -1,0 +1,33 @@
+This assignment can be done in groups of two members.
+
+Implement the six basic relational algebra operators for relations stored as delimited text files. Using these operators, implement an evaluator for relational algebra expressions. The expression evaluator should support expressions of the following type:
+
+Example 1:
+pi[account_number, balance](sigma[account.branch_name=branch.branch_name ^ branch_city='Oslo' ^ balance > 10000] (account X branch))
+
+Example 2:
+pi[balance](account) - pi[account.balance] (sigma[account.balance < a.bal] (account X
+rho[a(an, bn, bal)] (account)))
+
+Each relation r will be stored in a file named r.dat, using the following format:
+Row separator: newline, column/field separator: pipe (|)
+The first row contains column metadata, in the format attr_name:type.
+
+Sample contents of account.dat
+
+account_number:int|balance:float|branch:string
+1001|24000.5|Kukatpally
+2004|56010.0|Andheri
+1008|2000|Koramanagala
+1055|3050|Hauz Khas
+
+You need to support only 3 data types - int, float and string.
+
+Implement each operator as a separate C++ class. All operator classes will extend an abstract base class (in other words implement the interface) 'RAOperator'. Define a suitable virtual function in the 'RAOperator' class, which is overridden by the concrete operator classes to implement their functionality.
+
+The expression evaluator should produce its output on stdout, in the same format as the base relation files.
+
+
+To implement this assignment you will need to learn Lex and Yacc:
+http://dinosaur.compilertools.net
+http://epaperpress.com/lexandyacc/
